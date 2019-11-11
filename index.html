@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tarjetes_flexbox</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html{
+            min-height: 100%;
+        }
+        img{
+            max-width: 100%;
+        }
+        body{
+            font-family: "Georgia" cursive;
+            font-size: 18px;
+            background: linear-gradient(38deg,blue,purple);
+            color: purple;
+        }
+        .container{
+            display: flex;
+            /*flex-direction: row; */
+            padding: 2em 4em;
+            justify-content: center;      
+        }
+        .dissenyador{
+            display: flex;
+            flex-direction: column;
+            width: 25em;
+            margin: 1em;
+            background: rgba(240,240,240,0.9);
+            border-radius: 20px;
+            box-shadow: 0 0 20px purple;
+        }
+        .dissenyador_img{
+            border-radius: 20px 20px 0 0;
+            overflow: hidden;
+            width: 100%;
+            height: 300px;
+            background: purple;
+        }
+        .dissenyador_img img{
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%);
+            mix-blend-mode: lighten;
+        }
+        .dissenyador:first-child .dissenyador_img img{
+            object-position: center;
+        }
+        .dissenyador:last-child .dissenyador_img img{
+            object-position: center;
+        }
+        header{
+            display: flex;
+            margin: 0.5em 1em;
+            justify-content: space-between;
+            border-bottom: 1px solid purple;
+            align-items: baseline;
+        }
+        h3{
+            font-style: italic;
+            font-weight: bold;
+        }
+        span{
+            font-style: normal;
+            font-weight: lighter;
+            font-size: 0.9em;
+        }
+        .dissenyador_contingut{
+            flex-grow: 1;
+            margin: 1em 1em 0.5em 1em;
+            font-size: 0.9em;
+            line-height: 1.4em;
+            text-align: justify;
+            hyphens: auto;
+        }
+        footer{
+            background: purple;
+            color: white;
+            font-size: 0.9em;
+            font-style: italic;
+            border-radius: 0 0 20px 20px;
+            padding: 0.6em;
+        }
+        @media (max-width:600px){
+            body{
+                font-size: 16px;
+            }
+            .container{
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="dissenyador">
+            <div class="dissenyador_img">
+                <img src="img/carson.jpg" alt="David Carson">
+            </div>
+            <header>
+                <h3>David Carson</h3>
+                <span>1955</span>
+            </header>
+            <p class="dissenyador_contingut">
+                David Carson is an American graphic designer, art director and surfer. He is best known for his innovative magazine design, and use of experimental typography. He was the art director for the magazine Ray Gun, in which he employed much of the typographic and layout approach for which he is known. In particular, his widely imitated aesthetic defined the so-called "grunge typography" era.
+            </p>
+            <footer class="dissenyador_peu">
+                Carson was hired by publisher Marvin Scott Jarrett to design Ray Gun, an alternative music and lifestyle magazine that debuted in 1992. He designed and art directed the magazine for over 3 years, sending a completed issue to be printed when he finished designing it, with no one approving his designs before printing.
+            </footer>
+        </div>
+        <div class="dissenyador">
+            <div class="dissenyador_img">
+               <img src="img/glaser.jpg" alt="Milton Glaser">   
+            </div>
+        <header>
+            <h3>Milton Glaser</h3>
+            <span>1929</span>
+        </header>
+        <p class="dissenyador_contingut">
+            Milton Glaser es un ilustrador y diseñador muy prolífico conocido sobre todo por sus diseños para discos y libros. Ha creado más de 300 carteles entre los que se cuenta el famoso de Bob Dylan, un símbolo de los años sesenta. Glaser se ha dedicado al diseño editorial y a la identidad corporativa. En el primer campo ha trabajo para publicaciones como Paris Macht, L´Express, Esquire o Village Voice y La Vanguardia (1987-1989) para realizar un cambio en esta publicación coincidiendo con su paso al color.  
+        </p>
+        <footer class="dissenyador_peu">
+            En 1973 se publicó Milton Glaser: Graphic Design, una obra recopilatoria de su trabajo que ha tenido numerosas ediciones.
+        </footer>
+    </div>
+    </div>
+</body>
+</html>
